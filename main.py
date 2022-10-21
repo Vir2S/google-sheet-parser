@@ -28,7 +28,7 @@ def read_csv_from_remote_storage(path: str = PATH, columns: list = None):
     return pd.read_csv(path, usecols=columns)
 
 
-def get_columns_list_from_parsed_arguments(arguments):
+def get_columns_list_from_parsed_arguments(arguments) -> list or None:
     try:
         columns = arguments.fields.split(",")
     except Exception:
@@ -41,7 +41,7 @@ def parse_arguments():
     arguments_required = {
         "--fields": "required fields from csv",
     }
-    parser = argparse.ArgumentParser(prog="main.py", add_help=True)
+    parser = argparse.ArgumentParser(prog="google-sheet-parser/main.py", add_help=True)
 
     for key, value in arguments_required.items():
         parser.add_argument(key, type=str.lower, help=value, required=False)
@@ -51,10 +51,7 @@ def parse_arguments():
 
 def main():
     arguments = parse_arguments()
-    columns = get_columns_list_from_parsed_arguments(arguments)
-
-    print(columns, type(columns))
-
+    columns = get_columns_list_from_parsed_arguments(arguments=arguments)
     df = read_csv_from_remote_storage(path=PATH, columns=columns)
     json_file = create_json(dataframe=df)
     write_json(file=json_file, filename="out.json")
