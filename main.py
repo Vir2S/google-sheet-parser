@@ -1,8 +1,7 @@
 import json
 import pandas as pd
 
-URL = "https://drive.google.com/file/d/1zLdEcpzCp357s3Rse112Lch9EMUWzMLE/view"
-PATH = f"https://drive.google.com/uc?id={URL.split('/')[-2]}"
+from config import PATH
 
 
 def write_json(file: dict, filename: str) -> None:
