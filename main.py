@@ -2,15 +2,15 @@ import argparse
 import json
 import pandas as pd
 
-from config import PATH
+from config import PATH, FILENAME
 
 
-def write_json(file: dict, filename: str) -> None:
+def save_json_file(file: dict, filename: str) -> None:
     with open(filename, "w") as f:
         f.write(json.dumps(file, indent=4))
 
 
-def create_json(dataframe=None) -> dict:
+def create_json_file(dataframe=None) -> dict:
     res = []
     if dataframe is None:
         return {
@@ -41,7 +41,7 @@ def parse_arguments():
     arguments_required = {
         "--fields": "required fields from csv",
     }
-    parser = argparse.ArgumentParser(prog="google-sheet-parser/main.py", add_help=True)
+    parser = argparse.ArgumentParser(prog="main.py", add_help=True)
 
     for key, value in arguments_required.items():
         parser.add_argument(key, type=str.lower, help=value, required=False)
@@ -53,8 +53,8 @@ def main():
     arguments = parse_arguments()
     columns = get_columns_list_from_parsed_arguments(arguments=arguments)
     df = read_csv_from_remote_storage(path=PATH, columns=columns)
-    json_file = create_json(dataframe=df)
-    write_json(file=json_file, filename="out.json")
+    json_file = create_json_file(dataframe=df)
+    save_json_file(file=json_file, filename=FILENAME)
 
 
 if __name__ == "__main__":
