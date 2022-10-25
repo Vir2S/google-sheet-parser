@@ -6,25 +6,19 @@ import pandas as pd
 from config import PATH, FILENAME, DIR_NAME
 
 
-def check_existing_json_file(filename: str = FILENAME) -> bool:
-    if os.path.exists(f"{DIR_NAME}/{filename}"):
-        return True
-
-    try:
-        os.makedirs(f"{DIR_NAME}")
-    except FileExistsError:
-        ...
-
-    return False
-
-
 def get_file_list(dir_name: str = DIR_NAME) -> list:
-    files = os.listdir(dir_name)
+    try:
+        files = os.listdir(dir_name)
+    except FileNotFoundError:
+        os.makedirs(dir_name)
+        files = []
     return sorted(files)
 
 
-def save_json_file(file: dict, filename: str = FILENAME) -> None:
-    with open(f"{DIR_NAME}/{filename}", "w") as f:
+def save_json_file(file: dict, filename: str = None, dir_name: str = DIR_NAME) -> None:
+    if filename is None:
+        filename = FILENAME
+    with open(f"{dir_name}/{filename}", "w") as f:
         f.write(json.dumps(file, indent=4))
 
 
@@ -48,7 +42,7 @@ def read_csv_from_remote_storage(path: str = PATH, columns: list = None):
 
 def get_columns_list_from_parsed_arguments(arguments) -> list or None:
     try:
-        columns = arguments.fields.split(",")
+        columns = arguments.split(",")
     except Exception:
         columns = None
 
@@ -70,15 +64,12 @@ def parse_arguments():
 
 def main():
 
-    print(check_existing_json_file())
-    if check_existing_json_file():
-        print(get_file_list())
-    # print(get_file_list())
+    print(get_file_list())
     arguments = parse_arguments()
-    columns = get_columns_list_from_parsed_arguments(arguments=arguments)
+    columns = get_columns_list_from_parsed_arguments(arguments=arguments.fields)
     df = read_csv_from_remote_storage(path=PATH, columns=columns)
     json_file = create_json_file(dataframe=df)
-    save_json_file(file=json_file)
+    save_json_file(file=json_file, filename=arguments.filename)
 
 
 if __name__ == "__main__":
