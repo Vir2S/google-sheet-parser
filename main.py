@@ -1,16 +1,24 @@
 import argparse
 import json
+import os
 import pandas as pd
 
-from config import PATH
+from config import PATH, FILENAME, DIR_NAME
 
 
-def write_json(file: dict, filename: str) -> None:
-    with open(filename, "w") as f:
+def check_existing_json_file(filename: str = FILENAME) -> bool:
+    if os.path.exists(f"{DIR_NAME}/{filename}"):
+        return True
+    os.makedirs(f"{DIR_NAME}")
+    return False
+
+
+def save_json_file(file: dict, filename: str = FILENAME) -> None:
+    with open(f"{DIR_NAME}/{filename}", "w") as f:
         f.write(json.dumps(file, indent=4))
 
 
-def create_json(dataframe=None) -> dict:
+def create_json_file(dataframe=None) -> dict:
     res = []
     if dataframe is None:
         return {
@@ -39,9 +47,10 @@ def get_columns_list_from_parsed_arguments(arguments) -> list or None:
 
 def parse_arguments():
     arguments_required = {
-        "--fields": "required fields from csv",
+        "-fields": "required fields from csv",
+        "-filename": "full path to file with filename and ext"
     }
-    parser = argparse.ArgumentParser(prog="google-sheet-parser/main.py", add_help=True)
+    parser = argparse.ArgumentParser(prog="main.py", add_help=True)
 
     for key, value in arguments_required.items():
         parser.add_argument(key, type=str.lower, help=value, required=False)
@@ -50,11 +59,13 @@ def parse_arguments():
 
 
 def main():
+
+    print(check_existing_json_file())
     arguments = parse_arguments()
     columns = get_columns_list_from_parsed_arguments(arguments=arguments)
     df = read_csv_from_remote_storage(path=PATH, columns=columns)
-    json_file = create_json(dataframe=df)
-    write_json(file=json_file, filename="out.json")
+    json_file = create_json_file(dataframe=df)
+    save_json_file(file=json_file)
 
 
 if __name__ == "__main__":
