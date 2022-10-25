@@ -9,8 +9,18 @@ from config import PATH, FILENAME, DIR_NAME
 def check_existing_json_file(filename: str = FILENAME) -> bool:
     if os.path.exists(f"{DIR_NAME}/{filename}"):
         return True
-    os.makedirs(f"{DIR_NAME}")
+
+    try:
+        os.makedirs(f"{DIR_NAME}")
+    except FileExistsError:
+        ...
+
     return False
+
+
+def get_file_list(dir_name: str = DIR_NAME) -> list:
+    files = os.listdir(dir_name)
+    return sorted(files)
 
 
 def save_json_file(file: dict, filename: str = FILENAME) -> None:
@@ -61,6 +71,9 @@ def parse_arguments():
 def main():
 
     print(check_existing_json_file())
+    if check_existing_json_file():
+        print(get_file_list())
+    # print(get_file_list())
     arguments = parse_arguments()
     columns = get_columns_list_from_parsed_arguments(arguments=arguments)
     df = read_csv_from_remote_storage(path=PATH, columns=columns)
