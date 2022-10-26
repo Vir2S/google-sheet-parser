@@ -53,6 +53,7 @@ def create_json_file(dataframe=None) -> dict:
 
     for index, row in dataframe.iterrows():
         res.append(dict(row))
+
     return {"data": res}
 
 
