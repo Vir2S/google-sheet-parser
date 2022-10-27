@@ -15,28 +15,28 @@ def get_file_list(dir_name: str = DIR_NAME) -> list:
     return sorted(files)
 
 
-def get_file_name(files: list = None, filename: str = None) -> str:
-    if filename is None:
-        filename = FILENAME
+def get_file_name(filename: str = None) -> str:
+    # if filename is None:
+    #     filename = FILENAME
 
-    if files is None or len(files) == 0:
-        files = [filename]
+    return filename or FILENAME
 
-    if len(files) == 1:
-        filename = str(
-            files[-1].split(".")[-2] + f"-{1}" + "." + files[-1].split(".")[-1]
-        )
-    else:
-        try:
-            name = files[-1].split(".")[-2]
-            ext = files[-1].split(".")[-1]
-            filename = f'{name.split("-")[-2]}-{int(name.split("-")[-1])+1}.{ext}'
-        except IndexError:
-            name = files[-2].split(".")[-2]
-            ext = files[-2].split(".")[-1]
-            filename = f'{name.split("-")[-2]}-{int(name.split("-")[-1])+1}.{ext}'
 
-    return filename
+def check_updates(filename: str = FILENAME, dir_name: str = DIR_NAME, path: str = PATH, columns: list = None):
+    """"
+        :param filename: source json filename
+        :param dir_name: source directory name
+        :param path: path from url to spreadsheet
+        :param columns: fields to read from spreadsheet
+        :return: updates (difference between json file and spreadsheet) dataframe
+    """
+
+    with open(f"{dir_name}/{filename}", "r") as f:
+        json_file = json.loads(f.read())
+
+    start_index = len(json_file.get("data"))
+    updates = pd.read_csv(path, usecols=columns)[start_index:]
+    return updates
 
 
 def save_json_file(file: dict, filename: str = None, dir_name: str = DIR_NAME) -> None:
@@ -86,9 +86,15 @@ def parse_arguments():
 def main():
     arguments = parse_arguments()
     files = get_file_list()
-    filename = arguments.filename or get_file_name(files=files)
+    filename = arguments.filename or get_file_name()
     columns = get_columns_list_from_parsed_arguments(arguments=arguments.fields)
-    df = read_csv_from_remote_storage(path=PATH, columns=columns)
+
+    if len(files) and filename in files:
+        df = check_updates(path=PATH, columns=columns, filename=filename)
+        filename = f"updated-{filename}"
+    else:
+        df = read_csv_from_remote_storage(path=PATH, columns=columns)
+
     json_file = create_json_file(dataframe=df)
     save_json_file(file=json_file, filename=filename)
 
