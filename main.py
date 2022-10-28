@@ -19,13 +19,18 @@ def get_file_name(filename: str = None) -> str:
     return filename or FILENAME
 
 
-def check_updates(filename: str = FILENAME, dir_name: str = DIR_NAME, path: str = PATH, columns: list = None):
-    """"
-        :param filename: source json filename
-        :param dir_name: source directory name
-        :param path: path from url to spreadsheet
-        :param columns: fields to read from spreadsheet
-        :return: updates (difference between json file and spreadsheet) dataframe
+def check_updates(
+    filename: str = FILENAME,
+    dir_name: str = DIR_NAME,
+    path: str = PATH,
+    columns: list = None,
+):
+    """
+    :param filename: source json filename
+    :param dir_name: source directory name
+    :param path: path from url to spreadsheet
+    :param columns: fields to read from spreadsheet
+    :return: updates (difference between json file and spreadsheet) dataframe
     """
 
     with open(f"{dir_name}/{filename}", "r") as f:
