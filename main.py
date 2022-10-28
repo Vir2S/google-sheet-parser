@@ -16,9 +16,6 @@ def get_file_list(dir_name: str = DIR_NAME) -> list:
 
 
 def get_file_name(filename: str = None) -> str:
-    # if filename is None:
-    #     filename = FILENAME
-
     return filename or FILENAME
 
 
@@ -61,7 +58,7 @@ def read_csv_from_remote_storage(path: str = PATH, columns: list = None):
     return pd.read_csv(path, usecols=columns)
 
 
-def get_columns_list_from_parsed_arguments(arguments) -> list or None:
+def get_columns_list_from_parsed_arguments(arguments: str) -> list or None:
     try:
         columns = arguments.split(",")
     except Exception:
