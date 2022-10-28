@@ -1,0 +1,332 @@
+{
+    "data": [
+        {
+            "date": "2022-01-06",
+            "campaign": "retageting APAC",
+            "clicks": 1,
+            "spend": 2.55,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-06",
+            "campaign": "retargeting UK&CO",
+            "clicks": 5,
+            "spend": 2.47,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-07",
+            "campaign": "retageting APAC",
+            "clicks": 2,
+            "spend": 2.62,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-07",
+            "campaign": "retargeting UK&CO",
+            "clicks": 3,
+            "spend": 2.48,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-08",
+            "campaign": "retageting APAC",
+            "clicks": 2,
+            "spend": 2.44,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-08",
+            "campaign": "Free trial, upgrade to basic at https://www.windsor.ai/pricing/",
+            "clicks": 1,
+            "spend": 2.48,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-09",
+            "campaign": "retageting APAC",
+            "clicks": 2,
+            "spend": 2.44,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-09",
+            "campaign": "retargeting UK&CO",
+            "clicks": 3,
+            "spend": 2.42,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-10",
+            "campaign": "retageting APAC",
+            "clicks": 2,
+            "spend": 2.47,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-10",
+            "campaign": "retargeting UK&CO",
+            "clicks": 2,
+            "spend": 2.44,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-11",
+            "campaign": "retageting APAC",
+            "clicks": 3,
+            "spend": 2.48,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-11",
+            "campaign": "retargeting UK&CO",
+            "clicks": 1,
+            "spend": 2.46,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-12",
+            "campaign": "retageting APAC",
+            "clicks": 1,
+            "spend": 2.44,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-12",
+            "campaign": "retargeting UK&CO",
+            "clicks": 2,
+            "spend": 2.51,
+            "medium": "Unknown",
+            "source": "facebook"
+        },
+        {
+            "date": "2022-01-06",
+            "campaign": "powerbi",
+            "clicks": 21,
+            "spend": 5.57,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-07",
+            "campaign": "powerbi",
+            "clicks": 2,
+            "spend": 0.33,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-10",
+            "campaign": "powerbi",
+            "clicks": 6,
+            "spend": 1.67,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-11",
+            "campaign": "powerbi",
+            "clicks": 7,
+            "spend": 0.85,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-12",
+            "campaign": "powerbi",
+            "clicks": 4,
+            "spend": 0.66,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-06",
+            "campaign": "Sales-Search-7",
+            "clicks": 3,
+            "spend": 0.78,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-07",
+            "campaign": "Sales-Search-7",
+            "clicks": 1,
+            "spend": 0.41,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-08",
+            "campaign": "Sales-Search-7",
+            "clicks": 1,
+            "spend": 0.01,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-10",
+            "campaign": "Sales-Search-7",
+            "clicks": 2,
+            "spend": 0.2,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-11",
+            "campaign": "Sales-Search-7",
+            "clicks": 2,
+            "spend": 0.69,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-12",
+            "campaign": "Sales-Search-7",
+            "clicks": 1,
+            "spend": 0.47,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-06",
+            "campaign": "competitors",
+            "clicks": 5,
+            "spend": 0.174724,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-07",
+            "campaign": "competitors",
+            "clicks": 2,
+            "spend": 0.115777,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-08",
+            "campaign": "competitors",
+            "clicks": 2,
+            "spend": 0.667394,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-09",
+            "campaign": "competitors",
+            "clicks": 1,
+            "spend": 0.035359,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-10",
+            "campaign": "competitors",
+            "clicks": 2,
+            "spend": 0.6,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-12",
+            "campaign": "powerbi broad",
+            "clicks": 1,
+            "spend": 0.38,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-06",
+            "campaign": "datastudio",
+            "clicks": 4,
+            "spend": 1.88,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-07",
+            "campaign": "datastudio",
+            "clicks": 1,
+            "spend": 0.16,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-08",
+            "campaign": "datastudio",
+            "clicks": 3,
+            "spend": 0.6,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-11",
+            "campaign": "datastudio",
+            "clicks": 5,
+            "spend": 1.48,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-12",
+            "campaign": "datastudio",
+            "clicks": 3,
+            "spend": 0.78,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-06",
+            "campaign": "tableau broad",
+            "clicks": 1,
+            "spend": 0.15,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-07",
+            "campaign": "tableau broad",
+            "clicks": 2,
+            "spend": 1.38,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-08",
+            "campaign": "tableau broad",
+            "clicks": 1,
+            "spend": 0.2,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-11",
+            "campaign": "tableau broad",
+            "clicks": 1,
+            "spend": 0.34,
+            "medium": "Unknown",
+            "source": "google"
+        },
+        {
+            "date": "2022-01-12",
+            "campaign": "Multi touch attribution",
+            "clicks": 5,
+            "spend": 9.68,
+            "medium": "Unknown",
+            "source": "google"
+        }
+    ]
+}
